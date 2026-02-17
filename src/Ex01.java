@@ -7,19 +7,19 @@ public class Ex01 {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite a nota 1: ");
-        double nota1 = lerNota(sc);
-        System.out.print("Digite a nota 2: ");
-        double nota2 = lerNota(sc);
+        double nota1 = lerNota(sc, "Digite a nota 1: ");
+        double nota2 = lerNota(sc, "Digite a nota 2: ");
 
         double media = calcularMedia(nota1, nota2);
-        mostrarResultado(media);
+        String resultado = calcularResultado(media);
+        mostrarResultado(media, resultado);
 
         sc.close();
     }
 
     // MET - LÉR NOTAS
-    public static double lerNota(Scanner sc){
+    public static double lerNota(Scanner sc, String mensagem){
+        System.out.print(mensagem);
         return sc.nextDouble();
     }
 
@@ -28,9 +28,23 @@ public class Ex01 {
         return (nota1 + nota2) / 2;
     }
 
+    // CÁLCULO DO RESULTADO
+    public static String calcularResultado(double media){
+        if (media >= 7.0){
+            return "Aprovado";
+        }
+        else if (media >= 5.0){
+            return "Recuperação";
+        }
+        else{
+            return "Reprovado";
+        }
+    }
+
     // MOSTRAR MÉDIA
-    public static void mostrarResultado(double media){
+    public static void mostrarResultado(double media, String resultado){
         System.out.printf("Média: %.2f%n", media);
+        System.out.println("Situação: " + resultado);
     }
 
 }
