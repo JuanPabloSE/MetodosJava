@@ -12,7 +12,7 @@ public class Ex01 {
         System.out.print("Digite a nota 2: ");
         double nota2 = lerNota(sc);
 
-        double media = calculoMedia(nota1, nota2);
+        double media = calcularMedia(nota1, nota2);
         mostrarResultado(media);
 
         sc.close();
@@ -24,7 +24,7 @@ public class Ex01 {
     }
 
     // CÁLCULO DA MÉDIA
-    public static double calculoMedia(double nota1, double nota2){
+    public static double calcularMedia(double nota1, double nota2){
         return (nota1 + nota2) / 2;
     }
 
