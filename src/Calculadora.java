@@ -12,7 +12,7 @@ public class Calculadora {
         double segundoValor = lerValor(sc, "DIGITE O SEGUNDO VALOR: ");
         String operacao = operacaoLida(sc, "ESCOLHA A OPERAÇÃO DESEJADA (+, -, /, x): ");
 
-        double resultado = valorResultado(primeiroValor, segundoValor, operacao);
+        double resultado = calcularResultado(primeiroValor, segundoValor, operacao);
 
         mostrarResultado(resultado);
 
@@ -26,10 +26,10 @@ public class Calculadora {
 
     private static String operacaoLida(Scanner sc, String mensagem) {
         System.out.print(mensagem);
-        return sc.next();
+        return sc.next().toLowerCase();
     }
 
-    private static double valorResultado(double primeiroValor, double segundoValor, String operacao) {
+    private static double calcularResultado(double primeiroValor, double segundoValor, String operacao) {
         double aux;
         switch (operacao) {
             case "+":
@@ -41,6 +41,9 @@ public class Calculadora {
                 break;
 
             case "/":
+                if (segundoValor == 0) {
+                    throw new ArithmeticException("Divisão por zero não é permitida!");
+                }
                 aux = primeiroValor / segundoValor;
                 break;
 
