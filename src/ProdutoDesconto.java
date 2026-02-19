@@ -8,7 +8,7 @@ public class ProdutoDesconto {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        String opcao = "S";
+        String opcao;
         boolean continuar = true;
 
         while (continuar) {
@@ -32,9 +32,10 @@ public class ProdutoDesconto {
                 System.out.print("\nDeseja realizar outra compra? (S/N): ");
                 opcao = sc.next().trim().toUpperCase();
 
-                if (!opcao.equalsIgnoreCase("S")) {
+                if (opcao.equalsIgnoreCase("N")) {
                     continuar = false;
                 }
+                System.out.println("SISTEMA FINALIZADO. OBRIGADO POR USAR NOSSO SERVIÇO!");
 
             } catch (IllegalArgumentException e) {
                 System.out.println("Erro: " + e.getMessage());
