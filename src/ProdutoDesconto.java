@@ -38,7 +38,7 @@ public class ProdutoDesconto {
                 System.out.println("SISTEMA FINALIZADO. OBRIGADO POR USAR NOSSO SERVIÇO!");
 
             } catch (IllegalArgumentException e) {
-                System.out.println("Erro: " + e.getMessage());
+                System.out.println("Erro: " + e.getMessage()); // Receber mensagem de erro personalizada
             } catch (InputMismatchException e) {
                 System.out.println("Erro: Entrada inválida. Digite um valor numérico correto.");
                 sc.nextLine(); // Limpa o buffer do scanner
