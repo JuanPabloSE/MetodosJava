@@ -29,8 +29,7 @@ public class Calculadora {
                 }
             } catch (ArithmeticException e) {
                 System.out.println("\nERRO ❌: " + e.getMessage()); // Receber mensagem de erro personalizada
-            }
-            catch (IllegalArgumentException ex) {
+            } catch (IllegalArgumentException ex) {
                 System.out.println("\nERRO ❌: " + ex.getMessage()); // Receber mensagem de erro personalizada
             }
 
