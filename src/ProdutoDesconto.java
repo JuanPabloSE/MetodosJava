@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -7,22 +8,41 @@ public class ProdutoDesconto {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
+        String opcao = "S";
+        boolean continuar = true;
 
-        System.out.print("Digite o preço do produto: ");
-        double precoProduto = sc.nextDouble();
-        System.out.print("Digite a quantidade comprada: ");
-        int quantidadeComprada = sc.nextInt();
-        System.out.print("Tipo de Cliente ? (C = Comum / P = Premium): ");
-        String tipoCliente = sc.next().trim().toUpperCase();
-        System.out.print("Região de entrega ? (N = Nacional / I = Internacional): ");
-        String regiaoEntrega = sc.next().trim().toUpperCase();
+        while (continuar) {
+            try {
+                System.out.print("Digite o preço do produto: ");
+                double precoProduto = sc.nextDouble();
+                System.out.print("Digite a quantidade comprada: ");
+                int quantidadeComprada = sc.nextInt();
+                System.out.print("Tipo de Cliente ? (C = Comum / P = Premium): ");
+                String tipoCliente = sc.next().trim().toUpperCase();
+                System.out.print("Região de entrega ? (N = Nacional / I = Internacional): ");
+                String regiaoEntrega = sc.next().trim().toUpperCase();
 
-        double subTotal = calcularSubtotal(precoProduto, quantidadeComprada);
-        double desconto = calcularDesconto(subTotal, tipoCliente);
-        double frete = calcularFrete(subTotal, regiaoEntrega);
-        double total = calcularTotal(subTotal, desconto, frete);
+                double subTotal = calcularSubtotal(precoProduto, quantidadeComprada);
+                double desconto = calcularDesconto(subTotal, tipoCliente);
+                double frete = calcularFrete(subTotal, regiaoEntrega);
+                double total = calcularTotal(subTotal, desconto, frete);
 
-        mostrarResultado(subTotal, desconto, frete, total);
+                mostrarResultado(subTotal, desconto, frete, total);
+
+                System.out.print("\nDeseja realizar outra compra? (S/N): ");
+                opcao = sc.next().trim().toUpperCase();
+
+                if (!opcao.equalsIgnoreCase("S")) {
+                    continuar = false;
+                }
+
+            } catch (IllegalArgumentException e) {
+                System.out.println("Erro: " + e.getMessage());
+            } catch (InputMismatchException e) {
+                System.out.println("Erro: Entrada inválida. Digite um valor numérico correto.");
+                sc.nextLine(); // Limpa o buffer do scanner
+            }
+        }
 
         sc.close();
     }
@@ -86,5 +106,4 @@ public class ProdutoDesconto {
         System.out.printf("Frete: R$ %.2f%n", frete);
         System.out.printf("Total a pagar: R$ %.2f%n", total);
     }
-
 }
