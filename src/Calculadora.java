@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -31,6 +32,9 @@ public class Calculadora {
                 System.out.println("\nERRO ❌: " + e.getMessage()); // Receber mensagem de erro personalizada
             } catch (IllegalArgumentException ex) {
                 System.out.println("\nERRO ❌: " + ex.getMessage()); // Receber mensagem de erro personalizada
+            } catch (InputMismatchException ime) {
+                System.out.println("\nERRO ❌: ENTRADA INVÁLIDA! POR FAVOR, DIGITE UM NÚMERO VÁLIDO.\n");
+                sc.nextLine(); // Limpar o buffer do scanner para evitar loop infinito
             }
 
         }
