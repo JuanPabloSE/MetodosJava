@@ -24,7 +24,6 @@ public class Program {
         System.out.print("DIGITE A OPERAÇÃO DESEJADA ( +, -, /, x ): ");
         calculadora.operacao = sc.next().trim();
 
-
         sc.close();
     }
 

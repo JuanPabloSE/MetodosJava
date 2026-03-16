@@ -40,5 +40,4 @@ public class Calculadora {
         return aux;
     }
 
-
 }
