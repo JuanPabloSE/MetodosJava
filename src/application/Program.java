@@ -11,23 +11,19 @@ public class Program {
 
         // CRIANDO OBJETO CALCULADORA
 
-        Calculadora valor1 = new Calculadora();
-        Calculadora valor2 = new Calculadora();
-        Calculadora operacao = new Calculadora();
-        Calculadora resultado = new Calculadora();
+        Calculadora calculadora = new Calculadora();
 
         System.out.println("----- BEM-VINDO A CALCULADORA JAVA -----\n");
 
         System.out.print("DIGITE O PRIMEIRO VALOR: ");
-        valor1.valor1 = sc.nextDouble();
+        calculadora.valor1 = sc.nextDouble();
 
         System.out.print("DIGITE O SEGUNDO VALOR: ");
-        valor2.valor2 = sc.nextDouble();
+        calculadora.valor2 = sc.nextDouble();
 
         System.out.print("DIGITE A OPERAÇÃO DESEJADA ( +, -, /, x ): ");
-        operacao.operacao = sc.next().trim();
+        calculadora.operacao = sc.next().trim();
 
-        System.out.println(resultado.exibirResultado());
 
         sc.close();
     }

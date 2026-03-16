@@ -40,9 +40,5 @@ public class Calculadora {
         return aux;
     }
 
-    public boolean exibirResultado() {
-        double calcularResultado = calcularResultado(valor1, valor2, operacao);
-        return false;
-    }
 
 }
