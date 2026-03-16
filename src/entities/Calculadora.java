@@ -12,7 +12,7 @@ public class Calculadora {
         this.operacao = operacao;
     }
 
-    private double calcularResultado(double valor1, double valor2, String operacao) {
+    public double calcularResultado() {
         double aux;
         switch (operacao) {
             case "+":

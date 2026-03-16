@@ -24,7 +24,13 @@ public class Program {
         System.out.print("DIGITE A OPERAÇÃO DESEJADA ( +, -, /, x ): ");
         calculadora.operacao = sc.next().trim();
 
+        mostrarResultado(calculadora);
+
         sc.close();
+    }
+
+    public static void mostrarResultado(Calculadora calculadora) {
+        System.out.printf("%.1f%n", calculadora.calcularResultado());
     }
 
 
