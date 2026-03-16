@@ -29,7 +29,7 @@ public class Program {
 
         mostrarResultado(calculadora);
 
-        System.out.print("DESEJA CONTINUAR? (S/N): ");
+        System.out.print("\nDESEJA CONTINUAR? (S/N): ");
         opcao = sc.next().trim().toUpperCase();
 
         } while (!opcao.equals("N"));
