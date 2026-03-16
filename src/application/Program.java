@@ -9,8 +9,11 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
+        String opcao;
+
         // CRIANDO OBJETO CALCULADORA
 
+        do {
         Calculadora calculadora = new Calculadora();
 
         System.out.println("----- BEM-VINDO A CALCULADORA JAVA -----\n");
@@ -25,6 +28,11 @@ public class Program {
         calculadora.operacao = sc.next().trim();
 
         mostrarResultado(calculadora);
+
+        System.out.print("DESEJA CONTINUAR? (S/N): ");
+        opcao = sc.next().trim().toUpperCase();
+
+        } while (!opcao.equals("N"));
 
         sc.close();
     }
