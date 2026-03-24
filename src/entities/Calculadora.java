@@ -6,12 +6,6 @@ public class Calculadora {
     public double valor2;
     public String operacao;
 
-    public Calculadora() {
-        this.valor1 = valor1;
-        this.valor2 = valor2;
-        this.operacao = operacao;
-    }
-
     public double calcularResultado() {
         double aux;
         switch (operacao) {
