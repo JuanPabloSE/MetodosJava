@@ -6,7 +6,7 @@ public class Calculadora {
     public double valor2;
     public String operacao;
 
-    public double calcularResultado() {
+    public double getCalculadora() {
         double aux;
         switch (operacao) {
             case "+":
@@ -32,6 +32,10 @@ public class Calculadora {
                 throw new IllegalArgumentException("OPERAÇÃO INCORRETA, TENTE NOVAMENTE!\n");
         }
         return aux;
+    }
+
+    public String toString(){
+        return String.format("%.1f", getCalculadora());
     }
 
 }

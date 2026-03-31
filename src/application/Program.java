@@ -27,7 +27,7 @@ public class Program {
         System.out.print("DIGITE A OPERAÇÃO DESEJADA ( +, -, /, x ): ");
         calculadora.operacao = sc.next().trim();
 
-        mostrarResultado(calculadora);
+        System.out.print(calculadora + "\n");
 
         System.out.print("\nDESEJA CONTINUAR? (S/N): ");
         opcao = sc.next().trim().toUpperCase();
@@ -35,10 +35,6 @@ public class Program {
         } while (!opcao.equals("N"));
 
         sc.close();
-    }
-
-    public static void mostrarResultado(Calculadora calculadora) {
-        System.out.printf("%.1f%n", calculadora.calcularResultado());
     }
 
 
